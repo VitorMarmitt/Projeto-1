@@ -21,6 +21,7 @@
 body {
   background: var(--bg-url) no-repeat top center/cover;
   transition: background-color 0.3s ease, color 0.3s ease;
+  height: 100vh;
 }
 
 body * {
@@ -30,7 +31,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0 auto;
   padding: 0 24px;
 }
@@ -78,7 +80,6 @@ body * {
   transition: left 0.3s ease, background-color 0.3s ease;
 }
 
-/* ✅ Quando em modo claro, move a bolinha para o final */
 body.light .circle {
   left: 40px;
 }
@@ -140,4 +141,15 @@ footer {
   padding: 24px;
   text-align: center;
   font-size: 14px;
+}
+
+/* Responsivo: troca a imagem de fundo se a tela for maior que 700px */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
 }
